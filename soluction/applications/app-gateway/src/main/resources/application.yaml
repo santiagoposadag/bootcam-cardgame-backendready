@@ -1,0 +1,36 @@
+server:
+  port: 5000
+  origin: ${ORIGIN:*}
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      enabled: true
+      routes:
+        - id: master
+          uri: ${MASTER_URI:http://localhost:8085/}
+          predicates:
+              - Path=/master/**
+          filters:
+            - RewritePath=/master/(?<segment>.*), /$\{segment}
+        - id: command
+          uri: ${COMMAND_URI:http://localhost:8080/}
+          predicates:
+              - Path=/command/**
+          filters:
+            - RewritePath=/command/(?<segment>.*), /$\{segment}
+            - JWTFilter=RSA256,HS256,RS256
+            - RemoveResponseHeader=X-Powered-By
+        - id: queries
+          uri: ${QUERIES_URI:http://localhost:8081/}
+          predicates:
+            - Path=/queries/**
+          filters:
+            - RewritePath=/queries/(?<segment>.*), /$\{segment}
+        - id: proxy
+          uri: ${PROXY_URI:ws://localhost:8082/}
+          predicates:
+            - Path=/proxy/**
+          filters:
+            - RewritePath=/proxy/(?<segment>.*), /$\{segment}
