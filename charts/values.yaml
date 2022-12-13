@@ -21,24 +21,24 @@ rabbitmq_uri: "amqp://userCore:RabbitMQPassword@cardgame-core-rabbitmq:5672"
 master_uri: "http://cardgame-core-master:8085"
 
 command:
-  repository: 316078593388.dkr.ecr.us-east-1.amazonaws.com/raul-command
+  repository: 316078593388.dkr.ecr.us-east-1.amazonaws.com/santiago-command
   pullPolicy: Always
 
 queries:
-  repository: 316078593388.dkr.ecr.us-east-1.amazonaws.com/raul-queries
+  repository: 316078593388.dkr.ecr.us-east-1.amazonaws.com/santiago-queries
   pullPolicy: Always
 
 proxy:
-  repository: 316078593388.dkr.ecr.us-east-1.amazonaws.com/raul-proxy
+  repository: 316078593388.dkr.ecr.us-east-1.amazonaws.com/santiago-proxy
   pullPolicy: Always
 
 
 gateway:
-  repository: 316078593388.dkr.ecr.us-east-1.amazonaws.com/raul-gateway
+  repository: 316078593388.dkr.ecr.us-east-1.amazonaws.com/santiago-gateway
   pullPolicy: Always
 
 master:
-  repository: 316078593388.dkr.ecr.us-east-1.amazonaws.com/raul-master
+  repository: 316078593388.dkr.ecr.us-east-1.amazonaws.com/santiago-master
   pullPolicy: Always
 
 ingress:

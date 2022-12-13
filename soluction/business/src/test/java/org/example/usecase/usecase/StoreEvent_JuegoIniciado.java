@@ -26,7 +26,7 @@ public class StoreEvent_JuegoIniciado implements ArgumentsProvider {
         return Stream.of(
                 Arguments.of(List.of(
                         new JuegoCreado(JugadorId.of("1"), new MontoRequerido(3000)),
-                        new JugadorAgregado(JugadorId.of("1"), new Alias("Raul")),
+                        new JugadorAgregado(JugadorId.of("1"), new Alias("santiago")),
                         new JugadorAgregado(JugadorId.of("2"), new Alias("Pedro")),
                         new MazoAsignadoAJugador(JugadorId.of("1"), mazo1),
                         new MazoAsignadoAJugador(JugadorId.of("2"), mazo2),
