@@ -1,17 +1,3 @@
-#set up de java
-#checkout del proyecto
-#cd soluction
-#mvn install -DskipTests
-#cd applications/app-command/
-#mvn clean package -DskipTests
-#cd applications/app-gateway/
-#mvn clean package -DskipTests
-#cd applications/app-queries/
-#mvn clean package -DskipTests
-#cd applications/app-proxy/
-#mvn clean package -DskipTests
-#cd applications/app-master/
-#mvn clean package -DskipTests
 
 name: Docker Image CI
 
